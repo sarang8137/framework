@@ -16,10 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from api.views import Dishes,SDish
+# from api.views import Dishes,SDish,
+from api.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('dishes',Dishes.as_view()),
-    path('dishes/<int:id>',SDish.as_view()),
+    # path('dishes',Dishes.as_view()),
+    # path('dishes/<int:id>',SDish.as_view()),
+    path('dishes/',MenuView.as_view()),
+    path('dishes/<int:id>',SpecificItem.as_view()),
 ]
